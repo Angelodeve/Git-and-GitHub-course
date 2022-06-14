@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UN POCO MAS ALLA DE LOS FUNDAMENTOS DE GIT</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <header>
+          <h1>Un poco más allá de los fundamentos de GIT</h1> 
+        
+        </header>
+
+
+        <div>
+          <h2>CAMBIOS EN LOS ARCHIVOS</h2>
+          <ul>
+            <li>git diff <strong>Esto nos muestra los cambios como estaba amtes y despues </strong></li>
+             <li>git diff --staged <strong>Nos muestra el antes y despues de los que esten en el staged </strong></li>
+          </ul>
+        </div>
+
+
+        <div>
+          <h2>ACTUALIZAR MENSAJE DEL COMMIT Y REVERTIR COMMITS</h2>
+          <ul>
+            <li>git commit --amend -m "(aqui el nombre que quieres cambiar)" <strong>Este comando sirve para poder cambiar el nombre del ultimo commit que hemos realizado</strong></li>
+          </ul>
+        </div>
+
+
+        <div>
+          <h2>PREPARANDO UN REPOSITORIO PARA VIAJES EN EL TIEMPO</h2>
+           <li>git commit --amend <strong>Tambien podemos cambiar la informacion de nuestro ultimo commit</strong></li>
+        </div>
+
+
+        <div>
+          <h2>VIAJES EN EL TIEMPO RESETS Y REFLOG</h2>
+          <ul>
+            <li>git reset --soft ( aqui el codigo del commit) <strong>Me mueve todos los cambios al commit que yo quiera</strong></li>
+            <li>git reset --mixed ( aqui el codigo del commit) <strong> (saca todo del staged y los cambios quedan listos para volverlos añadir )</strong></li>
+            <li>git reset --hard (aqui el codigo del commit ) <strong>Este comando va a dejar todo el repositorio como estba antes</strong>
+            </li>
+            <li>git reflog <strong>es las referencias de todo lo que a sucedido en orden cronologico</strong></li>
+            <li>git reset --hard (aqui el codigo del commit) <strong>De esta forma podemos recuperar el contenido del commit de donde querramos poniendo el codigo del commit </strong></li>
+          </ul>
+        </div>
+
+
+        <div>
+          <h2>CAMBIAR EL NOMBRE Y ELIMINAR ARCHIVOS MEDIANTE GIT</h2>
+          <ul>
+            <li>git mv nombre1.md nombre2.md <strong>Con este comando podemos cambiar el nombre del archivo cuando ya haygamos hecho el commit</strong></li>
+             <li>git rm nombre1.md <strong>De esta forma borramos el archivo con git pero tambien se puede recuperar con <br></strong>
+                git reset --hard</li>
+          </ul>
+        </div>
+
+
+        <div>
+          <h2>IGNORANDO ARCHIVOS QUE NO DESEAMOS</h2>
+           <ul>
+             <li>Tenemos que crear un archivo nuevo con el nombre <b>(.gitignore)</b> de esa forma no tendremos que darle seguimiento a carpeta o archivos que no querramos</li>
+             <li>Dentro de <b>(.gitignore)</b> pondremos el nombre de la carpeta o archivo acompañado con un / por ejemplo: index.html/ 
+                 <ul>
+                   <li>dist/  <b>para carpetas</b></li>
+                   <li>*.log <b>para todos los archivos que acaben en .log</b></li>
+                 </ul>
+                </li>
+            </ul>
+        </div>
+</body>
+</html>

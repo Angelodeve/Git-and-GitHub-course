@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAMAS, UNIONES, CONFLICTOS Y TAGS</title>
+</head>
+<body>
+       <header>
+         <h1>INTRODUCCION RAMAS, UNIONES Y CONFLICTOS</h1>
+         <ul>
+           <li>RAMA es una línea de tiempo de commits</li>
+           <li>Merge - uniones
+             <ul>
+               <li>Fast-forward <b>se dispara cuando git detecta que no hay ningun cambio en la rama principal y los cambios pueden ser reintegrados de forma trasparente y cada uno de los commits formara parte de la rama principal como si nunca se hubieramos separados (ESTA CARACTERISTICA SE PUEDE DESATIVAR SI NO LA QUEREMOS) </b></li>
+               <li>Uniones automáticas <b>git detecta que en la rama principal hubo un cambio que la ramass secundarias desconocen, pero cuando intentemos hacer el merge,  git dice a ok no se modificaron lineas iguales no hay conflictos lo puede unir de forma automatica y git lo hace sin ningun problema marcando que ambas ramas se unieron</b></li>
+               <li>Manual <b>Git no puede resolver de forma automatica ejemplo: supongamos que tengamos 2 ramas llamadas 1 y 2 , en la rama 2 hicimos modificaciones que tmb afectan en las mismas lineas en los archivos en la rama que queremos unir los cambios, cuando git intente hacer esto,git entrara en un modo de conflicto en lo cual git nos pedira que nosotros lo resolvamos de forma manual y una vez resuelto el conflicto git creara un commit nuevo que se conoc como (merge commit )</b></li>
+             </ul>
+           </li>
+         </ul>
+       </header>
+
+
+       <div>
+         <h2>MERGE: FAST-FORWARD</h2>
+         <ul>git branch (Aqui va el nombre que queremos ponerle) <b>de esta forma creamos una rama</b></ul>
+         <li>git checkout (Aqui el nombre de la rama que creamos) <b>Con este comando nos cambiamos de rama</b> </li>
+         <h4>CUANDO QUERAMOS UNIR NUESTRA RAMA MASTER Y LA RAMA 1 TENEMOS QUE ESTAR EN LA RAMA QUE QUERAMOS QUE TENGA TODA LA INFO POR EJEMPLO: TENEMOS QU ESTAR EN LA RAMA MASTER </h4>
+         <li>git merge (el nombre de la rama que queramos unir (rama1)) <b>De esta forma se unira la rama1 a la rama master</b></li>
+         <h4>CUANDO YA HAYGAMOS UNIDO LA RAMA1 Y NO LA VAMOS A USAR LO CORRECTO SERIA ELIMINARLA</h4>
+         <li>git branch -d (el nombre de la rama) <b>De esta forma eliminamos la rama</b></li>
+         <li>git branch -d (el nombre de la rama) -f <b>Con esto git lo elimara de forma forzada lo recomendable es hacer el de arriba</b></li>
+       </div>
+
+
+       <div>
+         <h2>MERGE: UNION AUTOMATICA</h2>
+         <ul>
+           <li>git checkout -b (nombre de la nueva rama) <b>con este comando creamos una nueva rama y nos mueve a esa rama</b></li>
+          </ul>
+       </div>
+
+
+       <div>
+         <h2>TAGS-ETIQUTAS</h2>
+         <p>Son una referencia a un commit específico</p>
+         <h4>Creando etiquetas Tags</h4>
+         <ul>
+           <li>git tag (el nombre que le vamos a dar al tag) <b>De esta forma creamos tag</b></li>
+           <li>git tag <b>Nos muestra todo los tags que tengamos</b></li>
+           <li>git tag -d (Nombre del tag) <b>Con esto eliminamos el tag</b></li>
+           <li>git tag -a v0.1.0 (aqui el HASH osea el numero del commit) -m "Version Alpha de nestra app"</li>
+           <li>git show (aqui el nombre del tag) <b>Esto nos mostrara informacion del tag</b></li>
+         </ul>
+
+       </div>
+</body>
+</html>

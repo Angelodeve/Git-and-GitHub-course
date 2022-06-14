@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUNDAMENTOS DE GIT</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <header class="container">
+            <h1>01- Fundamentos de git</h1> 
+            <ul>
+                <li>En git un REPOSITORIO es un PROYECTO </li>
+                <li>Cuando aparece una <b>U (UNTRACK)</b> al costado de los archivos del proyecto quiere decir que <b>GIT NO LE ESTA DANDO SEGUIMIENTO</b></li> 
+                <li></li>
+            </ul>
+        
+
+         <div class="name">
+              <h2>Configuracion Mis  datos de usuario</h2>
+              <ol>
+                  <li>git config --global user.name "Angelo Arevalo"</li>
+                  <li>git config --global user.email "aangelomarcial@gmail.com"</li>
+                  <li>git config --global -e <strong>(esto nos mostrara nuestros datos)</strong></li>
+              </ol>
+         </div>
+
+
+           <div class="teclas">
+              <h2>Teclas que nos ayudan en Git</h2> 
+              <ul>
+                  <li> <strong>Q </strong> (nos ayda a salir de documnetacion, etc)</li>
+                  <li> <strong>:wq!</strong>Esto nos permite salir cuando estamos en el comando  <b>git config --global -e</b></li>
+                  <li> <strong>:q!</strong>lo mismo de arriba pero aqui solo es para verificar lo que tengamos en la config globañ</li>
+                  <li></li>
+              </ul>
+           </div>
+            
+        </header>
+
+        <div class="primerospasos">
+            <h2 class="sub-titulos">Primeros Comandos de Git</h2>
+            <ul>
+                <li>git --version <strong>(El -- significa que viene una palabta completa <br> Un - significa que lo que venga despues sera una abreviatura)</strong></li>
+                <li>git help <strong> (Nos muestra la ayuda de git)</strong></li>
+                <li>git help commit <strong>(Muestra informacion en especifico sobre el commit)</strong></li>
+                <li></li>
+                <li></li>
+        </div>
+
+
+        <div class="primer-repositorio">
+            <h2>MI PRIMER REPOSITORIO</h2>
+            <ol>
+                <li>git init  <strong>(Inicializa nuestro repositorio local) Nos crea una carpeta .git la cual contiene la referencia a todo lo que vayamos <br> haciendo en el repositorio para que git pueda llevar un rastro a todas las modificaciones que vamos haciendo en el repositorio  </strong></li>
+                <li>git status <strong>(Nos dara informacion sobre nuestro commit, que es lo que se modifico y que archivos estan listos para su snapshop sobre la rama donde trabaja(main) )</strong></li>
+                <li>git add <strong>(Dara seguimiento a nuestro proyecto)</strong></li>
+                <li>git add index.html <strong>(Le podememos dar seguimiento manualmente al archivo que querramos)</strong></li>
+                <li>git add . <strong>(Toma a todos los archivos del proyecto y les da seguimiento)</strong></li>
+                <li>git reset .(Aqui va el nombre del archivo) <strong>(SACARLO DEL STAGED)Nos permitira remover cualquier archivo que no querramos darle seguimiento(SIEMPRE Y CUANDO YA LE HAYGAMOS DADO SEGUIMIENTO)</strong></li>
+                <li>git commit -m "Primer commit" <strong>(Con esto le damos nombre a nuestro commit)</strong>               </li>
+            </ol>
+        </div>
+
+
+        <div>
+            <h2>¿QUE HACE GIT POR NOSOTROS EN ESTOS MOMENTOS</h2>
+            <ul>
+                <li>git checkout -- . <strong>(Reconstruye el proyecto como estaba en el ultimo commit {solo a los archivos que se le esta dando seguimiento }</strong></li>
+            </ul>
+        </div>
+
+
+       <div>
+           <h2>CAMBIAR NOMBRE DE LA RAMA <b>MASTER</b> A <b>MAIN</b></h2>
+           <ul>
+               <li>git branch <strong>Nos dice en que rama estamos trabajando </strong></li>
+               <li>git branch -m master main <strong>(Esto cambia el nombre de la rama de master a main) </strong></li>
+            
+               <h3>ESTABLECER LA CONFIGURACION INICIAL DE QUE AHORA TODAS LAS RAMAS CUANDO VUELVA <br> A INICIALIZAR MIS PROYECTOS YA NO SE VA A LLAMAR MASTER SI NO <b>MAIN</b> </h3>
+               <li>git config --global init.defaultBranch main</li>
+            </ul>
+       </div>
+
+
+       <div>
+           <h2>DEMOSTRACION DE LA CREACION PUESTA EN ESCENA Y COMMITS</h2>
+           <ul>
+              <li>README.md <strong>(Es un archivo especial con la extencion md(mackdown) es muy utilizado especialmente al momento de sbir nuestros repositorios a GTIHUB <br> las cuales trabajan en base archivos md para colocar informacion visual en ciertas paginas. Y si ponemos en nombre README cuando alguien navegue en su repositorio va a observar todo su contenido del archivo README pero ya formateado de manera html )</strong> </li>
+              <br>
+              <h3>PARA NO HACER EL git add . , git commit etc,( HAY UN ATAJO PARA HACER COMMIT DIRECTAMENTE LO PODEMOS HACER CON EL SIGUIENTE COMANDO)</h3>
+              <li>git commit -am "Readme actualizado" <strong>(Este comando solo funciona alos archivos que se le esta dando seguimiento)</strong> </li>
+            <br>
+            <br>
+              <li>git log <strong>Nos mostrara todos nuestros log que hemos hecho en nuestro repositorio Y ESTARAN ORDENADOS DEL MAS RECIENTE AL MAS ANTIGUO</strong></li>            
+            </ul>
+       </div>
+
+
+
+       <div>
+           <h2>BONUS- VSCODE ADD Y COMMITS</h2>
+           <ul>
+               <h3>Entrar en SOURCE CONTROL</h3>
+               <li>Cada vez que se esta modificando en un proyecto aparece en <b>source control (M)</b>podemos realizar por medio del VSCode el <b>git add. y  git commit</b></li>
+               <h4>GIT ADD .</h4>
+               <li>Al costado del nombre de los archivos aparecen 3 iconos <br>
+                  <ol>
+                      <li>El primero es para abrir el archivo </li>
+                      <li>El segundo es para descartar cambios que hemos hecho en nuestro archivo</li>
+                      <li>El tercero es como el <b>git add . (SE AGREGA AL staged)</b> con esto ya podremos hacer el commit</li>
+                       <li>Despues de agregarlo al staged nos sale dos iconos (EL DE ABRIR ARCHIVO Y SACARLO DEL STAGED)</li>
+                  </ol>
+               </li>
+               <h4>GIT COMMIT</h4>
+               <li>Source control en la parte de arriba hay un rectangulo Se pone el nombre que quieres ponerle al commit y lo guardas con (Ctrl+Enter)</li>
+            </ul>
+       </div>
+
+
+       <div>
+           <h2> DIFERENTES FORMAS DE AGREGAR ARCHIVOS AL ESCENARIO</h2>
+           <ul>
+               <li>gid add *.html <strong>( de esta forma podemos agregar todos los archivos HTML al staged)</strong></li>
+                <li>gid add js/*.js <strong>( de esta forma podemos agregar todos los archivos de la carpeta JS al staged)</strong>
+                    <ul>
+                        <li>js/ <strong>es el nombre de la carpeta</strong></li>
+                        <li>*.js <strong>es el nombre de los archivos que querramos agregar al staged</strong></li>
+                    </ul>
+                </li>
+                <h3>CUANDO AGREGAMOS UNA CARPETA DENTRO DE NUESTRO PROYECTO Y YA ESTAMOS USANDO GIT DENTRO DE ELLA, GIT NO LO TOMA EN CUENTA
+                    <br>POR EJEMPLO LA CARPETA ( uplpads AQUI SE VAN A SUBIR TODO LO QUE LOS USUARIOS CARGAN ASU SITIO WEB Y ESTA CARPETA ES MUY IMPORTANTE PORQUE PUEDE QUE EL PAST NO SE CUMPLA Y NO SE PUEDA SUBIR NADA Y EL REPOSITORIO ESTE DAÑADA)PARA SOLUCUINAR ESO SE AGREGA UN ARCHIVO A LA CARPETA CON EL NOMBRE (.gitkeep)
+                </h3>
+            </ul>
+       </div>
+
+
+       <div>
+           <h2>DIFERENTES FORMA DE AÑADIR STAGED</h2>
+           <ul>
+               <li>gid add css/ <strong>(Añade todos los directorios, subdirectorios y archivos que esten dentro de la carpeta CSS)</strong></li>
+           </ul>
+       </div>
+
+
+       <div>
+           <h2>CREANDO ALIAS PARA NUESTROS COMANDOS</h2>
+           <ul>
+               <li>git status --short <strong>Esto nos mostrara la informacion resumida del git status</strong></li>
+               <li>git config --global alias.s "status --short" <strong>Esto creara un alias con el nombre S que remplaza el status --short</strong></li>
+               
+               <li>git config --global alias.lg "log --graph --abbrev-commit --decorate --format=format:'%C(bold 
+                blue)%h%C(reset) - %C(bold green) (%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'--all"
+                <strong>(Esto es el alias de git log) A git lg</strong>
+              </li>
+            </ul>
+
+       </div>
+</body>
+</html>

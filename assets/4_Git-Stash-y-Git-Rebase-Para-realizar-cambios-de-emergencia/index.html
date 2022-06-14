@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIT STASH Y  GIT REBASE - PARA REALIZAR CAMBIOS DE EMERGENCIA</title>
+</head>
+<body>
+       <header>
+          <h1>Git Stash y  Git Rebase - Para realizar cambios de emergencia</h1>
+      </header>
+
+
+      <div>
+        <h2>Introduccion Al Stash</h2>
+        <p>es como una caja o contenedor donde podemos poner todos los cambios temporales para dejarlo en un determinado punto. Se recomienda trabajar solo con un stash y debemos aconstumbrarnos a trabajar con ramas</p>
+        <ul>
+          <li>git stash <b>salva todos los directorios aquellos que se le esta dando seguimiento y inclusive a los que no se le esta dando seguimiento,(nos dara un hash para identificarlo)</b></li>
+          <li>git stash list <b>Podemos ver todos nuestros git stash </b></li>
+          <li>git stash pop <b>esto va a tomar el ultimo stash y va a colocar nuevamente los cambios que hicimos</b></li>
+           <li>git stash clear <b>Borra todos los stash</b></li>
+          <li>git stash drop <b>Elimina el ultimo stash</b></li>
+          <li>git stash drop stash@{1} <b>De esta forma eliminamos el stash del orden que queramos</b> </li>
+          <li>git stash show stash@{1} <b>Esto nos muestra informacion del stash desde la terminal</b></li>
+          <li>git stash save "Aqui el nombre o mensaje para tu stash" <b>con esto podemos darle el nombre al stash</b></li>
+          <li>git stash list --stat <b>Esto nos da un poco mas de info de nuestros stash</b></li>
+        </ul>
+      </div>
+
+
+
+      <div>
+        <h2>INTRODUCCION AL GIT REBASE</h2>
+        <p></p>
+        <h3>REBASE INTERACTIVO</h3>
+        <P>¿Para qué nos serviría eso?</P>
+        <ul>
+          <li>Ordenar commits</li>
+          <li>Corregir mensajes de los commits</li>
+          <li>Unir commits</li>
+          <li>Separar commits</li>
+        </ul>
+
+        <h2>REBASE ACTUALIZANDO UNA RAMA (rebase normal)</h2>
+        <p>Si queremos hacer un REBASE tenemos que estar en la rama en la cual quiero que se muevan los cambios <b>ejemplo: seria en la rama 2 y no en main</b></p>
+        <ul>
+          <li>git rebase main <b>tendremos que estar en la rama 2 para poner este comando</b></li>
+          <li>git merge rama2 <b>con esto unimos los commits de la rama 2 al main(obviamente estando ya en la rama main)</b></li>
+        </ul>
+        <h2>REBASE-SQUASH</h2>
+        <ul>
+          <li>git rebase -i HEAD~4 <b>el HEAD es el ultimo commit y ~4 indica los ultimos 4 commit Y NOS ABRIRA UNA PG CON DATOS DE LOS COMMITS AGREGADOS Y LUEGO SE TIENE QUE HACER EL SQUASH</b></li>
+          <li>squash sirve para unir commits</li>
+          <li>Le ponemos solo una <b>(s) al costado del commit solo se pone en un commit cuando quierews unir 2 commit para salir presionamos :qw! y NOS MOSTRARA OTRA PAGINA  para salir presionamos :qw!</b></li>
+        </ul>
+      </div>
+
+
+      <div>
+        <h2>REBASE - REWORD</h2>
+        <h3>CAMBIANDO LOS NOMBRES DEL COMMIT</h3>
+        <ol>
+          <li>git rebase -i HEAD~4 <b>elegimos el commit que queremos cambiar el nombre</b></li>
+          <li>Despues le ponemos una <b>(r) para cambiarle el nombre del commit </b></li>
+        </ol>
+      </div>
+
+
+      <div>
+        <h2>REBASE EDIT</h2>
+        <p>Cuando editamos algunos archivos y queremos hacerlos commits, pero despues decidimos que el archivo 2 queremos dejarlo tal como estaba antes y no queremos estar borrando manualmente entonces utilizamos el siguiente comando</p>
+        <ul>
+          <li>git checkout -- README.md</li>
+          <h3>SI NOS EQUIVOCAMOS Y HICIMOS UN COMMIT Y QUEREMOS HACER 2 COMMITS INDEPENDIENTES HACEMOS ESTO </h3>
+          <p>Podemos hacer un reset y volver hacerlo pero esta ves los haremos con rebase interactivo </p>
+          <li>git rebase -i HEAD~3 <b>en el pick cambien por la letra (e) y salimos :wq! esto nos mandara a un rebase manual sale 2 opciones: </b>
+            <ul>
+               <li>git commit --amend <b>queremos hacer correpciones o enmendar el ultimo commit</b></li>
+               <li>git rebase --continue <b>una vez ya estamos satisfechos con los cambio que vamos hacer </b></li>
+           </ul>
+           <h4>SE HACE ESTO</h4>
+           <li>git reset Head ^ <b>esto nos mandara al momento exacto antes de mandarlo al stage</b></li>
+           <li>gid add elnombre1 y despues el commit git commit -am "elnombre1" y el segundo archivo hacemos lo mismo</li>
+           <li>git rebase --continueb
+             De esta forma acaba el rebase interactivo </li>
+            
+          </li>
+        </ul>     
+      </div>
+</body>
+</html>
