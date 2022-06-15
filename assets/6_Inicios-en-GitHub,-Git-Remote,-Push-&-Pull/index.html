@@ -27,8 +27,26 @@
 
           <h2>9_WARNING PULLING WITHOUT RECONCILE STRATEGY</h2>
           <ul>
-            <li></li>
+            <li>git config --global pull.ff only</li>
           </ul>
+          <h2>10_SUBIR CAMBIOS LOCALES AL REPOSITORIO REMOTO</h2>
+          <p>Se debera ir hasta el repositorio y luego copiar el link https (https://github.com/KlerithX2/liga-justicia.git)
+            <br>luego se crea una carpeta de esta forma:</p>
+            <ul>
+              <li>Abrir la terminal y abrir en la carpeta que queramos clonar el repositorio </li>
+              <li>git clone https://github.com/KlerithX2/liga-justicia.git <b>de esta forma ya abremos clonado el repositorio</b></li>
+            </ul>
+            <br>
+            <br>
+          <h2>12_GIT PULL REBASE</h2>
+          <p>Esto se utilizara cuando en github y en git hacemos cambios en la misma linea, y tendremos que usar en git pull</p>
+           <ol>
+            <li> git config --global pull.rebase true <b>Esto se hace una sola vez ya que estamos haciendo una configuracion global </b></li>
+            <li> git pull </li>
+            <li>LUEGO TENEMOS QUE AHCER UN COMMIT (git add . , git commit -m "") ponemos el comando <b>git status</b> <br> y aparecera INTERACTIVE REBASE IN PROGRESS <b>Entonces como terminamos el rebase  pues con el siguiente comando</b></li>
+             <li>git rebase --continue <b>con esto culminamos el rebase</b></li>
+          </ol>
+          <h3>EJERCICIO DE GIT PULL</h3>
          </div>
 </body>  
 </html>
