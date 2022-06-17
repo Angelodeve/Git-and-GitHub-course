@@ -17,6 +17,8 @@
               <br>
               <br>
               <br>
+
+
               <h2>5_PULL REQUEST</h2>
               <ul>
                 <li>git checkout (Aqui el  hash del commit) (Aca el nombre del archivo donde se hizo las modificaciones)</li>
@@ -25,6 +27,62 @@
                       <li>si tenemos tres commits en orden llamados A,B Y C. Y queremos eliminar el commit B ps lo eliminamos con el comando de arriba sin afectar los commits A Y C </li>
                     </ul>
                   </li>
+              </ul>
+              <br>
+              <br>
+
+              <h3>6_ACTUALIZANDO NUESTRO FORK</h3>
+              <p>Lo que vamos aprender continuación es muy usado cuando nosotros tenemos
+                algún compañero de trabajo nuevo que no confiamos mucho en él todavía como para darle acceso a todo
+                el repositorio.
+                Entonces le decimos a él, haz  un fork en este caso y empieza a trabajar tú en ese repositorio.
+                Ok, <br> <br>
+
+                <b>vamos a suponer el siguiente caso tenemos nuestro repositorio central en GitHub que en este momento
+                  lo vamos a llamar upstream.
+                  Entonces llega a Batman y él hace un fork de el repositorio completo ok.
+                  El está trabajando ahí de forma aislada que ya lo tiene en su github y luego llega Superman y también
+                  hace un fork es el mismo proyecto.
+                  Ok, en este punto del tiempo ambos repositorios serían iguales, no?
+                  Porque todavía ninguno de los dos ha hecho cambios.
+                  Pero bueno, llega Batman y hace un clon a su repositorio local, al igual que Superman hace un clon
+                  a su repositorio local.
+                  Ambos hacen cambios locales, hacen pushes (push) a sus respectivos repositorios en GitHub y luego para que
+                  estos repositorios actualicen el upstream, en este caso el repositorio central, ellos tienen que hacer
+                  pull request.
+                  Todo parece normal, pero la pregunta del millón es cómo podemos actualizar nuestro fork siendo nosotros
+                  Batman?
+                  Es decir, cómo podemos saber los cambios que hizo Superman y tenerlos en nuestro repositorio para poder
+                  realizar trabajos?
+                  Porque puede ser que Superman haga cosas que nosotros ocupamos en nuestro repositorio.
+                  </b>
+                </p>
+                <img src="actualizando-nuestro-fork.png" alt="ACTUALIZANDO FORK"> <br> <br>
+
+                <strong> Cómo podemos actualizar nuestro fork?</strong>
+                <p>Tanto Batman como Superman deberían de hacer un pull del upstream ok.
+                  Posteriormente ellos podrían hacer cambios locales, hacer push a sus respectivos repositorios y luego
+                  hacer la solicitud de un pull request para que estos cambios sean aceptados en el upstream o el repositorio central.
+                  Pero cómo podemos hacer eso si nosotros tenemos ya un remoto agregado en nuestro guía local?
+                  Mmmm.
+                  Bueno, simplemente tendríamos que agregar un nuevo remoto.
+                  Y luego tenemos que hacer un fetch o un pull para actualizar nuestro repositorio local y luego poder
+                  hacer push y pull requests otra vez.
+                  </p>
+                  <img src="actualizando-fork-2.png" alt="">
+                  <br> <br>
+
+                   <b>ENTONCES PARA HACER LA ACTUALIZACION DEL FORK EN NUESTRO CONSOLA LOCAL(tambien se puede hacer desde github) <br>
+                     NECESITAMOS EL LINK DEL REPOSITORIO ORIGINAL. ALGO IMPORTANTE SE PUEDE AÑADIR MUCHOS REPOSITORIOS REMOTOS O CUANTO <br>
+                     NECESITE NUESTRO PROYECTO (Usualmente, si es un repositorio del cual yo solo voy a traer informacion es conocido como UPSTREAM  )</b>
+              <ul>
+                <li>git remote add upstream (el link de la repo original) <b>usualmente cuando  </b></li>
+                 <li>git pull upstream main <b>upstream es el repositoriooriginal donde hicimos el fork seguido del nombre de la rama que quiero traer los datos Y CON ESTO NOS TRAE LA INFORMACION</b></li>
+                  <br>
+                 <b>Normalmente lo resuelve con el FAST-FORWARD, pero tambien con REBASE (resolver conflicto) en ese caso hariamos lo siguinete</b>
+                  <li>git commit -am "upstream actualizado"</li>
+                 <li>git rebase --continue <b>cuando ua terminamos utilizamos este comando, CON git status no mostrara la informacion </b></li>
+                 <li>git push </li>
               </ul>
         </div>
 </body>
