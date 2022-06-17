@@ -85,5 +85,100 @@
                  <li>git push </li>
               </ul>
         </div>
+
+
+
+        
+        <div>
+          <h1>11_Feature Branch - Flujo de trabajo mediante pull request</h1>
+          <p>Primero creamos un repositorio en github, luego agregamos archivos y los hicimos commits y tag y l
+           o subimos con un push a github, luego en Vs code agregamos otro archivo por lo que decidimos crear una nueva rama
+          y movernos ahi, volvemos a usar <b>git add ., git commit -m "villanos.md"</b> <br>
+          ¿PERO COMO PODEMOS AGREGAR LA RAMA A GITHUB</p>
+          pues con el 2do comando que esta aqui abajo:
+          <ul>
+           <li>git checkout -b rama-villanos <b>crea una nueva rama y se mueve a ella, se llmara rama-villanos</b></li>
+           <li>git push --set-upstream origin rama-villanos <b>Y con esto logramos subir la rama a github</b></li>
+           <li>git checkout main <b>con esto cambiamos de la rama main a la rama-villanos o biseversa</b></li>
+           <br>
+           <br>
+           <h2>Y si hacemos cambios en el archivo de la rama-villanos utilizamos estos camandos para guargarlos y subirlos a github</h2>
+           <li>git commit -am "Ultimo villano agregado"</li>
+           <li>git push <b>y en este caso con estos dos comandos se sube a github</b></li>
+           <li>git branch -d rama-villanos <b>con este comando eliminamos la rama (Eliminamos la rama ya cuando haygamos unido con la rama principal main)</b></li>
+            <br>
+            <br>
+ 
+ 
+           <h2>13_FEATURE BRANCH REVISANDO EL TRABAJO DE OTROS COMPAÑEROS</h2>
+           <p>En esta seccion vamos a simular como si un  compañero de trabajo a creado una rama aparte llamada rama-misiones entones como hacemos para traer esa rama a mi consola local
+             pues con los siguientes coomandos traeremos:
+           </p>
+           <li>git branch -a <b>esto nos brindara informacion de las ramas creadas de forma local y virtual</b></li>
+           <li>git checkout rama-misiones <b>con esto eligimos la rama del compañero para revisarla y nos agregara todo los archivps de esa rama</b></li>
+            <img src="Imagen1.png" alt="" srcset="">
+            <h3>SI HACEMOS CAMBIOS, CORRECCIONES DENTRO DE ESA RAMA ¿COMO LO GUARDAMOS Y LO SUBIMOS A GITHUB?</h3>
+            <li>git commit -am "Misiones actualizadas"</li>
+            <li>git push <b>De esa forma ya se sube todos los cambios de la rama a github</b></li>
+            <br>
+            <b>Y YA EN GITHUB HACEMOS EL PULL REQUESTS</b>
+            <br>
+            <br>
+ 
+ 
+            <h2>LIMPIAR RAMAS QUE YA NO SON NECESARIAS</h2>
+            <p>cuando ya haygamos fusionado nuestra rama secundaria con la principal ya no la necesitamos es por ello que la eliminamos en github pero tambien deberiamos hacerlo en nuestra  consola local y la eliminamos con los siguientes comandos:</p>
+            <li>git checkout main <b>primero nos vamos a nuestra rama principal </b></li>
+            <li>git remote prune origin <b>De esta forma ya borramos las ramas que teniamos menos la principal IMPORTANTE SI AUN NO HEMOS BORRADO LAS RAMAS EN GITHUB CON ESTE COMANDO LAS ELIMINAR DE FORMA LOCAL Y VIRTUAÑ</b></li>
+             <br>
+             <br>
+ 
+             <h2>RAMA DE PRODUCCION</h2>
+             <p>suponiendo de que nosotros
+               tenemos nuestra línea de tiempo, nuestra súper aplicación o lo que sea que estemos desarrollando,
+               nosotros vamos a ir paulatinamente avanzando hasta llegar a la versión 2.0, por ejemplo.
+               Pero sucede que en algún determinado punto se crea una rama, como por ejemplo la versión 1.1.0, en la
+               cual estuvimos trabajando en ciertas actualizaciones que eventualmente no fueron incluidas en la versión master.
+               Pero son necesarias porque llega un cliente y nos dice No, la verdad es que yo no voy a pagar la versión
+               2, necesito que sigamos trabajando en la versión una versión 1 en la versión 1 y se queda de esa manera.
+               Esto es una forma de trabajar también que realmente sucede en la vida real, especialmente si ustedes
+               cobran o hacen cambios muy dramáticos en el cambio de sus versiones.
+               </p>
+             <img src="rama-de-produccion.png" alt="rama-de-produccion" srcset="">
+             <br>
+             <br>
+             <p>Ahora, esto es bien común verlo cuando le damos soporte prolongado a una versión en particular o cuando
+               nos pagan para darle mantenimiento a esa versión en particular.
+               La otra es cuando realizamos arreglos en caliente o cambios que son urgentes, como por ejemplo si subimos
+               ya la aplicación.
+               Pero resulta que la gente se dio cuenta de que no funcionaba con su usuario.
+               No hay logging, no funciona algo, entonces tenemos que hacer ese cambio inmediatamente.
+               Y la otra es cuando nosotros subimos a producción algo, pero constantemente tenemos que estar dando
+               soporte y arreglos cada vez que hay un nuevo despliegue.
+               Esto ayuda mucho a que nosotros podamos analizar o el equipo de soporte pueda darnos un feedback o una
+               retroalimentación de lo que está pasando para que nosotros después podamos aplicar las correcciones.
+               Así que vamos a crear un ejemplo de una rama de este tipo.
+               </p>
+               <img src="rama-de-produccion-2.png" alt="" srcset="">
+             <li>git branch <b>para ver la rama en donde estamos</b></li>
+             <li>git checkout -b rama-kitkat <b>rama creada</b></li>
+             <p>Hacemos unos cambios en los archivos y los volvemos commit</p>
+             <li>git commit -am "Capitan America goesnad"</li> 
+             <li>git push --set-upstream origin rama-kitkat </li>
+             <br>
+             <p>Aqui creamos tag</p>
+             <li>git tag -a v1.0.0 -m "Kitkat v1.0.0 - Stable"</li> 
+             <li>git push --tags <b>aqui hemos creado un tag dentro de la rama rama-kitkat, esto servira si en caso eleminamos la rama local y remota y necesitamos esta rama con el tag podemos recuperarlo</b></li> 
+              <br>
+              <br>
+             <h2>RECUPERAR UNA RAMA DE PRODUCCION</h2> 
+             <li>git tag</li>
+              <li>git checkout v1.0.0 </li>  
+              <li>git s</li> 
+              <li>git checkout -b rama-kitkat</li>
+              <li>git push </li> 
+              <li>git push origin :rama-kitkat <b>Con esto eliminamos esta rama de forma local y virtual</b></li>
+           </ul>
+       </div>
 </body>
 </html>
